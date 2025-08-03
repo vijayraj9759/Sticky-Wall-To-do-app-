@@ -1,11 +1,17 @@
-📝 Todo App
-A simple, responsive Todo App built using React and TailwindCSS. This app allows users to manage their daily tasks with ease and automatically saves your todos using local storage, so your tasks are always remembered even after refreshing the page.
+# 📝 Todo App
 
-🚀 Features
-✅ Add, delete, and mark todos as completed
+A simple, **responsive** Todo App built using **React** and **TailwindCSS**. This app allows users to manage their daily tasks with ease and automatically saves your todos using **local storage**, so your tasks are always remembered even after refreshing the page.
 
-💾 Stores todos in local storage
+## 🚀 Features
 
-📱 Fully responsive design
+- ✅ Add, delete, and mark todos as completed  
+- 💾 Stores todos in **local storage**  
+- 📱 Fully **responsive** design  
+- ⚡ Built with **React** and styled using **TailwindCSS**
 
-⚡ Built with React and styled using TailwindCSS
+## 📦 Tech Stack
+
+- [React](https://reactjs.org/)  
+- [TailwindCSS](https://tailwindcss.com/)  
+- JavaScript (ES6+)
+- HTML5 & CSS3

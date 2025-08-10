@@ -9,6 +9,7 @@ const Add = () => {
   const [editingId, seteditingId] = useState("")
   const [editingText, seteditingText] = useState("")
   const [showfinished, setshowfinished] = useState(false)
+  let baseurl = "https://sticky-wall-backend.onrender.com/"
 
   useEffect(() => {
     async function fetchdata(url) {
@@ -22,12 +23,12 @@ const Add = () => {
         console.log("here something going wrong")
       }
     }
-    fetchdata("http://localhost:3000/api/todos/gettodos")
+    fetchdata(`${baseurl}api/todos/gettodos`)
   }, [])
 
   const Addtodo = () => {
     if (Todo !== '') {
-      adddata("http://localhost:3000/api/todos/addtodos")
+      adddata(`${baseurl}api/todos/addtodos`)
     }
     async function adddata(url) {
       try {
@@ -81,7 +82,7 @@ const Add = () => {
         console.log("some error occured ")
       }
     }
-    updatecomplete(`http://localhost:3000/api/todos/updatecomplete/${uuid}`)
+    updatecomplete(`${baseurl}api/todos/updatecomplete/${uuid}`)
 
   }
 
@@ -99,7 +100,7 @@ const Add = () => {
         console.log("some error occured ")
       }
     }
-    deletedata(`http://localhost:3000/api/todos/deletetodo/${id}`)
+    deletedata(`${baseurl}api/todos/deletetodo/${id}`)
   }
 
   const handleedit = (editingid, editingtext) => {
@@ -137,7 +138,7 @@ const Add = () => {
         console.log("some error occured ")
       }
     }
-    updatename(`http://localhost:3000/api/todos/updatename/${uuid}`)
+    updatename(`${baseurl}api/todos/updatename/${uuid}`)
   }
 
   const handlekey = (e) => {

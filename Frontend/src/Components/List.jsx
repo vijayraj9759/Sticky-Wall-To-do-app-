@@ -9,7 +9,7 @@ const Add = () => {
   const [editingId, seteditingId] = useState("")
   const [editingText, seteditingText] = useState("")
   const [showfinished, setshowfinished] = useState(false)
-  let baseurl = "https://sticky-wall-backend.onrender.com/"
+  let baseurl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     async function fetchdata(url) {

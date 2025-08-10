@@ -59,8 +59,15 @@ const Add = () => {
   const onchangedchecked = (uuid) => {
     async function updatecomplete(url) {
       try {
-        let currtodo = Todos.find(todo => todo.uuid == uuid)
-        let currentstaus = currtodo.completed;
+        let currentstatus ;
+        const updateTodos = Todos.map(todo => {
+          if (todo.uuid === uuid) {
+            currentstatus = todo.completed;
+            return { ...todo, completed: !currentstatus }
+          }
+          return todo
+        })
+        setTodos(updateTodos)
         const res = await fetch(url, {
           method: "PUT", // PATCH for partial updates
           headers: {
@@ -71,13 +78,6 @@ const Add = () => {
         const data = await res.json();
         console.log("update Response:", data);
 
-        const updateTodos = Todos.map(todo => {
-          if (todo.uuid === uuid) {
-            return { ...todo, completed: !currentstaus }
-          }
-          return todo
-        })
-        setTodos(updateTodos)
       } catch (error) {
         console.log("some error occured ")
       }

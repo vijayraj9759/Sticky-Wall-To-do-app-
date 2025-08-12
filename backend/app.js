@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cors())
 app.use('/api/todos', router)  
 app.get('/' , (req,res)=>{
-  res.send("hello")
+  res.send("Here is the Backend of the app is live ")
 })
 
 app.listen(port, () => {
